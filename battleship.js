@@ -63,7 +63,7 @@ var model = {
 			this.ships[i].locations = locations;
 		}
 		// console.log("ships: ");
-		console.log(this.ships);
+		// console.log(this.ships);
 	},
 
 	generateShip: function () {
@@ -133,15 +133,14 @@ var view = {
 };
 
 function parseGuess(guess) {
-	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
-	var alphabet = ["a", "b", "c", "d", "e", "f", "g"];
+	// var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
-	let guess = guess.toLowerCase();
+	var alphabet = ["a", "b", "c", "d", "e", "f", "g"];
 
 	if (guess === null || guess.length !== 2) {
 		alert("Oops, please enter a letter and a number on the board.");
 	} else {
-		var row = alphabet.indexOf(guess.charAt(0));
+		var row = alphabet.indexOf(guess.toLowerCase().charAt(0));
 		var column = guess.charAt(1);
 
 		if (isNaN(row) || isNaN(column)) {
